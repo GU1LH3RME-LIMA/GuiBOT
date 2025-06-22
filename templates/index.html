@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>GUIBOT</title>
+  <link href="{{ url_for('static',filename='style.css') }}" rel="stylesheet" />
+  <script src="{{ url_for('static',filename='index.js') }}"></script>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Arquivo de aprendizado</h2>
+
+  <!-- Formulário separado para upload -->
+  <form id="anexo" action="/anexar" method="post" enctype="multipart/form-data">
+    <label for="arquivo">Anexar Arquivo:</label>
+    <input type="file" id="arquivo" name="arquivo" required>
+    <h4 id="anexado"></h3>
+    <input type="submit" value="Anexar">
+  </form>
+
+  <hr>
+
+  <!-- Formulário separado para enviar pergunta -->
+  <form id="enviar" action="/enviar" method="post">
+    <label for="pergunta">Pergunta:</label>
+    <textarea id="pergunta" name="pergunta" rows="4" placeholder="Digite sua pergunta aqui..." required>{{ pergunta or '' }}</textarea>
+
+    <label for="resposta">Resposta:</label>
+    <textarea id="resposta" name="resposta" rows="4" disabled>{{ resposta or '' }}</textarea>
+
+    <input type="submit" value="Enviar Pergunta">
+  </form>
+</div>
+
+</body>
+</html>

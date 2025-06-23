@@ -5,7 +5,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_community.document_loaders import PyPDFLoader
 
 # Configuração da API
-api_key = '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'
+api_key = 'Coloque a API aqui'
 os.environ["GROQ_API_KEY"] = api_key
 chat = ChatGroq(model='llama-3.3-70b-versatile')
 
